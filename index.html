@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>FH Feedback A1</title>
+    <!--jQuery-->
+    <script src="js/lib/jquery-2.1.4.js"></script>
+    <!--jQuery Mobile-->
+    <script src="js/lib/jquery.mobile-1.4.5.js"></script>
+    <!--jQuery Mobile style-->
+    <link rel="stylesheet" type="text/css" href="css/lib/jquery.mobile-1.4.5.css">
+</head>
+<body>
+
+<!-- Home Page Feedback Page -->
+<div id="fhHomePage" data-role="page">
+    <header data-role="header" data-position="fixed" style="text-shadow: none;">
+        <h1>FH Feedback A1</h1>
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="#fhHomePage" data-icon="home" data-theme="a"
+                       class="ui-btn-active ui-state-persist">Home</a>
+                </li>
+                <li><a href="#fhAddFeedbackPage" data-icon="plus" data-theme="a">Add</a>
+                </li>
+                <li><a href="#fhViewFeedbackPage" data-icon="grid" data-theme="a">Reviews</a>
+                </li>
+                <li><a href="#fhSettingsPage" data-icon="gear" data-theme="a">Settings</a>
+                </li>
+            </ul>
+        </div>
+
+    </header>
+    <section data-role="content">
+        <h3>Faisal Hussein's Feedback A1 App</h3>
+        <p>Welcome to the Faisal Hussein Feedback A1 app. A prototype designed for mobile progamming class. This is the
+            first iteration of the app to keep track of different places you visited along with your reviews.</p>
+        <p>Please feel free to contact me if you have any suggestions!</p>
+        <a href="" data-icon="plus" data-role="button" data-theme="a">Call: 519.748.5220</a>
+        <a href="" data-icon="plus" data-role="button" data-theme="a">fhussein0878@conestogac.on.ca</a>
+    </section>
+    <footer data-role="footer" data-position="fixed" style="text-shadow: none;">
+        <h4>&copy; 2020 Faisal Hussein</h4>
+    </footer>
+</div>
+
+<!-- Add Feedback Page -->
+<div id="fhAddFeedbackPage" data-role="page">
+    <header data-role="header" data-position="fixed" style="text-shadow: none;">
+        <h1>FH Feedback A1</h1>
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="#fhHomePage" data-icon="home" data-theme="a">Home</a></li>
+                <li><a href="#fhAddFeedbackPage" data-icon="plus" data-theme="a"
+                       class="ui-btn-active ui-state-persist">Add</a>
+                </li>
+                <li><a href="#fhViewFeedbackPage" data-icon="grid" data-theme="a">Reviews</a>
+                </li>
+                <li><a href="#fhSettingsPage" data-icon="gear" data-theme="a">Settings</a>
+                </li>
+            </ul>
+        </div>
+
+    </header>
+    <section data-role="content">
+        <form id="fhAddForm" name="fhAddForm" data-ajax="false">
+            <label for="fhBusiness">Business Name: </label>
+            <input type="text" name="business" id="fhBusiness" value="">
+            <label for="fhEmail">Review Email:</label>
+            <input type="text" name="email" id="fhEmail" value="">
+            <label for="fhComments">Review Comments:</label>
+            <textarea cols="50" rows="8" name="comments" id="fhComments"></textarea>
+            <label for="fhRating"> Overall Ratings)1-100) :</label>
+            <input type="number" name="rating" pattern="(0-100)*%" id="fhRating" value="">
+
+            <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-btn-inline ui-btn-input"
+                    data-inline="true" data-theme="b" style="background: #3388cc; color: white; text-shadow: none;">Save
+            </button>
+        </form>
+    </section>
+    <footer data-role="footer" data-position="fixed" style="text-shadow: none;">
+        <h4>&copy; 2020 Faisal Hussein</h4>
+    </footer>
+</div>
+
+<!-- View Feedback Page -->
+<div id="fhViewFeedbackPage" data-role="page">
+    <header data-role="header" data-position="fixed" style="text-shadow: none;">
+        <h1>FH Feedback A1</h1>
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <ul>
+                    <li><a href="#fhHomePage" data-icon="home" data-theme="a">Home</a></li>
+                    <li><a href="#fhAddFeedbackPage" data-icon="plus" data-theme="a">Add</a>
+                    </li>
+                    <li><a href="#fhViewFeedbackPage" data-icon="grid" data-theme="a"
+                           class="ui-btn-active ui-state-persist">Reviews</a>
+                    </li>
+                    <li><a href="#fhSettingsPage" data-icon="gear" data-theme="a">Settings</a>
+                    </li>
+                </ul>
+            </ul>
+        </div>
+
+    </header>
+    <section data-role="content">
+        <ul data-role="listview" data-insert="true" data-icon="false" id="fhFeedbackList">
+            <li><a href="#fhEditFeedbackPage" id="fhBusiness">Business Name: 342 Games
+                <p id="fhEmail">Review Email: fh@spy.com</p>
+                <p id="fhComments">Comments: Great Environment and Helpful Staff members!</p>
+                <p id="fhRating">Overall Rating: 89%</p></a>
+            </li>
+            <li><a href="#fhEditFeedbackPage" id="fhBusiness">Business Name: Card Kingdom
+                <p id="fhEmail">Review Email: fh@spy.com</p>
+                <p id="fhComments">Comments: Items are rarely restocked and no tracking its provided for shippments. Terrible service!</p>
+                <p id="fhRating">Overall Rating: 0%</p></a>
+            </li>
+        </ul>
+    </section>
+    <footer data-role="footer" data-position="fixed" style="text-shadow: none;">
+        <h4>&copy; 2020 Faisal Hussein</h4>
+    </footer>
+</div>
+
+<!-- Edit Feedback Page -->
+<div id="fhEditFeedbackPage" data-role="page">
+    <header data-role="header" data-position="fixed" style="text-shadow: none;">
+        <h1>FH Feedback A1</h1>
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="#fhHomepage" data-icon="home" data-theme="a">Home</a></li>
+                <li><a href="#fhAddFeedbackPage" data-icon="plus" data-theme="a">Add</a>
+                </li>
+                <li><a href="#fhViewFeedbackPage" data-icon="grid" data-theme="a"
+                       class="ui-btn-active ui-state-persist">Reviews</a>
+                </li>
+                <li><a href="#fhSettingsPage" data-icon="gear" data-theme="a">Settings</a>
+                </li>
+            </ul>
+        </div>
+
+    </header>
+    <section data-role="content">
+        <form id="fhEditForm" name="fhEditForm" data-ajax="false">
+            <label for="fhBusiness">Business Name: </label>
+            <input type="text" name="business" id="fhBusiness" value="">
+            <label for="fhEmail">Review Email:</label>
+            <input type="text" name="email" id="fhEmail" value="">
+            <label for="fhComments">Review Comments:</label>
+            <textarea cols="50" rows="8" name="comments" id="fhComments"></textarea>
+            <label for="fhRating"> Overall Ratings)1-100) :</label>
+            <input type="number" name="rating" pattern="(0-100)*%" id="fhRating" value="">
+
+        </form>
+    </section>
+    <footer data-role="footer" data-position="fixed" style="text-shadow: none;">
+        <h4>&copy; 2020 Faisal Hussein</h4>
+    </footer>
+</div>
+
+<!-- Settings Page -->
+<div id="fhSettingsPage" data-role="page">
+    <header data-role="header" data-position="fixed" style="text-shadow: none;">
+        <h1>FH Feedback A1</h1>
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="#fhHomePage" data-icon="home" data-theme="a">Home</a></li>
+                <li><a href="#fhAddFeedbackPage" data-icon="plus" data-theme="a">Add</a>
+                </li>
+                <li><a href="#fhViewFeedbackPage" data-icon="grid" data-theme="a">Reviews</a>
+                </li>
+                <li><a href="#fhSettingsPage" data-icon="gear" data-theme="a"
+                       class="ui-btn-active ui-state-persist">Settings</a>
+                </li>
+            </ul>
+        </div>
+
+    </header>
+    <section data-role="content">
+
+    </section>
+    <footer data-role="footer" data-position="fixed" style="text-shadow: none;">
+        <h4>&copy; 2020 Faisal Hussein</h4>
+    </footer>
+</div>
+</body>
+</html>
