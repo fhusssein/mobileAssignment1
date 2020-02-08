@@ -1,0 +1,215 @@
+<!--
+Assignment 1: Mobile Application
+Created by: Faisal Hussein
+Date: 02/14/2019
+-->
+<!DOCTYPE>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">	
+		<title>FH Feedback A1 </title>
+		 <script src="js/lib/jquery-2.1.4.js"></script>
+        <!--jQuery mobile-->
+        <script src="js/lib/jquery.mobile-1.4.5.js"></script>
+        <!--jQuery mobile css-->
+        <link rel="stylesheet" type="text/css" href="css/lib/jquery.mobile-1.4.5.css">
+        <!--jQuery validation library-->
+        <script src="js/lib/jquery.validate.js"></script>
+        <!--our stylesheet-->
+        <link rel="stylesheet" type="text/css" href="css/mystyle.css">
+	</head>
+	
+	<body>
+		<!--Home page-->
+        <div data-role="page" id="FHHomepage">
+            <header data-role="header" data-position="fixed" style = "text-shadow: none;">
+				<h1>FH Feedback A1</h1>
+				<div data-role="navbar" data-iconpos="top">
+					<ul>
+						<li><a href="#FHHomepage" data-icon="home" data-theme="a" class=
+						"ui-btn-active
+						ui-state-persist">Home</a>
+						</li>
+						<li><a href="#FHAddFeedbackPage" data-icon="plus" data-theme="a">Add</a>
+						</li>
+						<li><a href="#FHListOfReviewsPage" data-icon="grid" data-theme="a">Reviews</a>
+						</li>
+						<li><a href="#FHSettingsPage" data-icon="gear" data-theme="a">Settings</a>
+						</li>
+					</ul>
+				</div>
+			</header>
+			<section data-role="content">
+				<h3>Faisal Hussein's Feedback A1 App</h3>
+				<p>Welcome to the Faisal Hussein Feedback A1 app. A prototype designed for mobile progamming class. This is the first iteration of the app to keep track of different places you visited along with your reviews.</p>
+				<div align="center">
+					<img src="img/FH-icon.png" height="150px" width="250px" alt="icon">
+				</div>
+				<p>Please feel free to contact me if you have any suggestions!</p>
+				<a href="" data-icon="plus" data-role="button" data-theme="a">Call: 519.748.5220</a>
+				<a href="" data-icon="plus" data-role="button" data-theme="a">fhussein0878@conestogac.on.ca</a>
+				<p></p>
+				<a href="" data-icon="plus" data-role="button" data-theme="a">Conestoga College</a>
+			</section>
+			<footer date-role="footer" data-position="fixed" style = "text-shadow: none;">
+				<h4>&copy; 2019 Faisal Hussein</h4>
+			</footer>
+        </div>
+
+		<!--Add Feedback Page-->
+		<div data-role="page" id="FHAddFeedbackPage">
+			<header data-role="header" data-position="fixed" style = "text-shadow: none;">
+				<h1>Add Feedback</h1>
+				<div data-role="navbar" data-iconpos="top">
+					<ul>
+						<li><a href="#FHHomepage" data-icon="home" data-theme="a">Home</a>
+						</li>
+						<li><a href="#FHAddFeedbackPage" data-icon="plus" data-theme="a" class=
+							"ui-btn-active
+							ui-state-persist">Add</a>
+						</li>
+						<li><a href="#FHListOfReviewsPage" data-icon="grid" data-theme="a">Reviews</a>
+						</li>
+						<li><a href="#FHSettingsPage" data-icon="gear" data-theme="a">Settings</a>
+						</li>
+					</ul>
+				</div>
+			</header>
+			<section data-role="content">
+					<form id="FHAddForm" name="FHAddForm" data-ajax="false">
+						<label for="text-basic">Business Name:</label>
+							<input type="text" name="business" id="FHBusiness" value="">
+						<label for="text-basic">Review Email:</label>
+							<input type="email" name="email" id="FHEmail" value="">
+						<label for="text-area">Review Comments:</label>
+							<textarea cols="50" rows="8" name="comments" id="FHComments">
+							</textarea>
+						<label for="number-pattern"> Overall Ratings)1-100) :</label>
+						<input type="number" name="rating" pattern="(0-100)*%" id="FHRating" value="">
+
+						<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-btn-inline ui-btn-input"
+						data-inline="true" data-theme="b" style="background: #3388cc; color: white; text-shadow: none;">Save</button>
+					</form>
+			</section>
+			<footer date-role="footer" data-position="fixed" style = "text-shadow: none;">
+				<h4>&copy; 2019 Faisal Hussein</h4>
+			</footer>
+		</div>
+
+		<!--View Feedback Page-->
+		<div data-role="page" id="FHListOfReviewsPage">
+			<header data-role="header" data-position="fixed" style="text-shadow:none;">
+				<h1>List of Reviews</h1>
+				<div data-role="navbar" data-iconpos="top">
+					<ul>
+						<li><a href="#FHHomepage" data-icon="home" data-theme="a" >Home</a>
+						</li>
+						<li><a href="#FHAddFeedbackPage" data-icon="plus" data-theme="a">Add</a>
+						</li>
+						<li><a href="#FHListOfReviewsPage" data-icon="grid" data-theme="a" class=
+							"ui-btn-active
+							ui-state-persist">Reviews</a>
+						</li>
+						<li><a href="#FHSettingsPage" data-icon="gear" data-theme="a">Settings</a>
+						</li>
+					</ul>
+				</div>
+			</header>
+			<section data-role="content">
+				<ul data-role="listview" data-insert="true" data-icon="false" id="FHListOfReviews">
+					<li><a href="#FHModifyFeedbackPage" id="FHBusiness">Business Name: 342 Games
+						<p id="FHEmail">Review Email: fh@spy.com</p>
+						<p id="FHComments">Comments: Great Environment and Helpful Staff members!</p>
+						<p id="FHRating">Overall Rating: 89%</p></a>
+					</li>
+					<li><a href="#FHModifyFeedbackPage" id="FHBusiness">Business Name: Card Kingdom
+							<p id="FHEmail">Review Email: fh@spy.com</p>
+							<p id="FHComments">Comments: Items are rarely restocked and no tracking its provided for shippments. Terrible service!</p>
+							<p id="FHRating">Overall Rating: 0%</p></a>
+						</li>
+				</ul>
+			</section>
+			<footer date-role="footer" data-position="fixed" style = "text-shadow: none;">
+				<h4>&copy; 2019 Faisal Hussein</h4>
+			</footer>
+		</div>
+
+		<!--Edit Feedback Page-->		
+		<div data-role="page" id="FHModifyFeedbackPage">
+			<header data-role="header" data-position="fixed" style ="text-shadow: none;">
+				<h1>Edit Feedback</h1>
+				<div data-role="navbar" data-iconpos="top">
+					<ul>
+						<li><a href="#FHHomepage" data-icon="home" data-theme="a" >Home</a>
+						</li>
+						<li><a href="#FHAddFeedbackPage" data-icon="plus" data-theme="a">Add</a>
+						</li>
+						<li><a href="#FHListOfReviewsPage" data-icon="grid" data-theme="a" class=
+							"ui-btn-active
+							ui-state-persist">Reviews</a>
+						</li>
+						<li><a href="#FHSettingsPage" data-icon="gear" data-theme="a">Settings</a>
+						</li>
+					</ul>
+				</div>
+			</header>
+			<section data-role="content">
+					<form id="FHAddForm" name="FHAddForm" data-ajax="false">
+							<label for="text-basic">Business Name:</label>
+								<input type="text" name="business" id="FHBusiness" value="">
+							<label for="text-basic">Review Email:</label>
+								<input type="email" name="email" id="FHEmail" value="">
+							<label for="text-area">Review Comments:</label>
+								<textarea cols="50" rows="8" name="comments" id="FHComments"></textarea>
+							<label for="number-pattern"> Overall Ratings)1-100) :</label>
+							<input type="number" name="rating" pattern="(0-100)*%" id="FHRating" value="">
+
+							<fieldset data-role="controlgroup" data-type="horizontal"> 
+								<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-btn-inline ui-btn-input"
+								data-inline="true" data-theme="b" style="background: yellow; color: black; text-shadow: none;">Cancel</button>
+
+								<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-btn-inline ui-btn-input"
+								data-inline="true" data-theme="b" style="background: black; color: white; text-shadow: none;">Delete</button>
+
+								<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-btn-inline ui-btn-input"
+								data-inline="true" data-theme="b" style="background: #3388cc; color: white; text-shadow: none;">Update</button>
+							</fieldset>
+					</form>
+				</section>
+			<footer data-role="footer" data-position="fixed" style = "text-shadow: none;">
+				<h4>&copy; 2019 Faisal Hussein</h4>
+			<footer>
+		</div>
+
+		<!--Settings Page-->
+		<div data-role="page" id="FHSettingsPage">
+			<header data-role="header" data-position="fixed" style = "text-shadow: none;">
+				<h1>Settings</h1>
+				<div data-role="navbar" data-iconpos="top">
+					<ul>
+						<li><a href="#FHHomepage" data-icon="home" data-theme="a">Home</a>
+						</li>
+						<li><a href="#FHAddFeedbackPage" data-icon="plus" data-theme="a">Add</a>
+						</li>
+						<li><a href="#FHListOfReviewsPage" data-icon="grid" data-theme="a">Reviews</a>
+						</li>
+						<li><a href="#FHSettingsPage" data-icon="gear" data-theme="a" class=
+							"ui-btn-active
+							ui-state-persist">Settings</a>
+						</li>
+					</ul>
+				</div>
+			</header>
+			<section data-role="content">
+				<label for="text-basic">Review Email:</label>
+				<input type="email" name="email" id="FHEmail" value="">
+				<button type="submit" class="ui-btn ui-shadow ui-corner-all ui-btn-input" style="background: #3388cc; color: white; text-shadow: none;">Save Defaults</button>
+
+				<button class="ui-btn ui-shadow ui-corner-all ui-btn-input" style="background: black; color: white; text-shadow: none;">Clear Database</button>
+			</section>
+			<footer data-role="footer" data-position="fixed" style = "text-shadow:none;">
+				<h4>&copy; 2019 Faisal Hussein</h4>
+			<footer>
+		</div>
+	</body>
+</html>
